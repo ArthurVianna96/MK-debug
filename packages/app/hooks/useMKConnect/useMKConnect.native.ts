@@ -133,8 +133,9 @@ export const useMKConnect = (linkId?: string) => {
 		const linkSession = await CreateLinkSessionTokenService(params);
 		if (linkSession) {
 			presentMoneyKit(linkSession);
+		} else {
+			console.error('Failed to present Moneykit');
 		}
-		console.error('Failed to present Moneykit');
 	};
 
 	const handleMKConnect = async () => {
