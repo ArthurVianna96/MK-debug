@@ -1,0 +1,23 @@
+{
+	"name": "next-app",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev -p 3004",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@gluestack/ui-next-adapter": "latest",
+		"@moneykit/connect": "^0.3.23",
+		"app": "*",
+		"next": "^14.2.5",
+		"next-auth": "^4.24.7",
+		"raf": "^3.4.1",
+		"react-native-reanimated": "~3.10.1"
+	},
+	"devDependencies": {
+		"@types/node": "20.3.2"
+	}
+}

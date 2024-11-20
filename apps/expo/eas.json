@@ -1,0 +1,10 @@
+{
+	"cli": {
+		"version": ">= 9.2.0"
+	},
+	"build": {
+		"dev": {
+			"channel": "dev"
+		}
+	}
+}

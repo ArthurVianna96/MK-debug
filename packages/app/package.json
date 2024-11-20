@@ -1,0 +1,25 @@
+{
+	"version": "0.0.0",
+	"name": "app",
+	"main": "index.ts",
+	"dependencies": {
+		"@gluestack-style/react": "1.0.54",
+		"@gluestack-ui/config": "1.1.18",
+		"@gluestack-ui/themed": "1.1.22",
+		"date-fns": "^3.6.0",
+		"expo-localization": "~15.0.3",
+		"expo-location": "~17.0.1",
+		"immer": "^10.1.1",
+		"intl-pluralrules": "^2.0.1",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-native-svg": "15.2.0",
+		"react-native-web": "^0.19.10",
+		"solito": "^4.2.2",
+		"zustand": "^4.5.2"
+	},
+	"scripts": {
+		"resources": "i18next-resources-for-ts interface -i ./locales/en -o ./@types/resources.d.ts"
+	},
+	"sideEffects": false
+}

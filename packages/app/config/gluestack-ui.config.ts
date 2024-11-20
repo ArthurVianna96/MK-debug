@@ -1,0 +1,443 @@
+import { AnimationResolver } from '@gluestack-style/animation-resolver';
+import { MotionAnimationDriver } from '@gluestack-style/legend-motion-animation-driver';
+import { createComponents, createConfig } from '@gluestack-style/react';
+import { config as defaultConfig } from '@gluestack-ui/config';
+import * as componentsTheme from './theme';
+
+export const gluestackUIConfig = createConfig({
+	aliases: {
+		bg: 'backgroundColor',
+		bgColor: 'backgroundColor',
+		h: 'height',
+		w: 'width',
+		p: 'padding',
+		px: 'paddingHorizontal',
+		py: 'paddingVertical',
+		pt: 'paddingTop',
+		pb: 'paddingBottom',
+		pr: 'paddingRight',
+		pl: 'paddingLeft',
+		m: 'margin',
+		mx: 'marginHorizontal',
+		my: 'marginVertical',
+		mt: 'marginTop',
+		mb: 'marginBottom',
+		mr: 'marginRight',
+		ml: 'marginLeft',
+		rounded: 'borderRadius',
+	} as const,
+	tokens: {
+		colors: {
+			...defaultConfig.tokens.colors,
+
+			primary50: '#F9FCFF',
+			primary100: '#F0F9FF',
+			primary200: '#D1EEFF',
+			primary300: '#97D9FF',
+			primary400: '#47BDFF',
+			primary500: '#009EF7',
+			primary600: '#008DDB',
+			primary700: '#0079BC',
+			primary800: '#006CA8',
+			primary900: '#02517D',
+
+			smBlue50: '#F9FCFF',
+			smBlue100: '#F0F9FF',
+			smBlue200: '#D1EEFF',
+			smBlue300: '#97D9FF',
+			smBlue400: '#47BDFF',
+			smBlue500: '#009EF7',
+			smBlue600: '#008DDB',
+			smBlue700: '#0079BC',
+			smBlue800: '#006CA8',
+			smBlue900: '#02517D',
+
+			smPartner50: '#FDFBFF',
+			smPartner100: '#FBF5FF',
+			smPartner200: '#F4EAFF',
+			smPartner300: '#E0C1FF',
+			smPartner400: '#BB8BEE',
+			smPartner500: '#A666E8',
+			smPartner600: '#9141E4',
+			smPartner700: '#7510C5',
+			smPartner800: '#521691',
+			smPartner900: '#3C106B',
+
+			smKids50: '#FFF9FD',
+			smKids100: '#FFF4FB',
+			smKids200: '#FCDDF3',
+			smKids300: '#F8B3E3',
+			smKids400: '#EB6BC3',
+			smKids500: '#F34EB7',
+			smKids600: '#E737A7',
+			smKids700: '#CE0088',
+			smKids800: '#861A5F',
+			smKids900: '#621145',
+
+			semanticGreen50: '#FBFFFE',
+			semanticGreen100: '#F1FBF9',
+			semanticGreen200: '#E4FBF2',
+			semanticGreen300: '#CAFBE9',
+			semanticGreen400: '#7AEBC2',
+			semanticGreen500: '#28C68D',
+			semanticGreen600: '#15A672',
+			semanticGreen700: '#008454',
+			semanticGreen800: '#0B5E40',
+			semanticGreen900: '#00462D',
+
+			semanticRed50: '#FFFCFD',
+			semanticRed100: '#FFF8FA',
+			semanticRed200: '#FFF0F0',
+			semanticRed300: '#FFB8B8',
+			semanticRed400: '#FF8C8C',
+			semanticRed500: '#FF6565',
+			semanticRed600: '#F43939',
+			semanticRed700: '#DE0000',
+			semanticRed800: '#BD0606',
+			semanticRed900: '#960404',
+
+			semanticYellow50: '#FFFAF1',
+			semanticYellow100: '#FFFAF1',
+			semanticYellow200: '#FFF5E2',
+			semanticYellow300: '#FFEAC5',
+			semanticYellow400: '#FFDDA0',
+			semanticYellow500: '#FCCC78',
+			semanticYellow600: '#FBB844',
+			semanticYellow700: '#FFA515',
+			semanticYellow800: '#EB9000',
+			semanticYellow900: '#BE7500',
+
+			smNeutral50: '#FFFFFF',
+			smNeutral100: '#F9F9F9',
+			smNeutral200: '#EEEEEE',
+			smNeutral300: '#DCDCDC',
+			smNeutral400: '#C9C9C9',
+			smNeutral500: '#A5A5A5',
+			smNeutral600: '#828282',
+			smNeutral650: '#5F6368',
+			smNeutral700: '#626262',
+			smNeutral800: '#424242',
+			smNeutral900: '#0D0B2D',
+
+			gradientColor1: '#FFF4FB',
+			gradientColor2: '#FBF5FF',
+			gradientColor3: '#F5FBFF',
+
+			blueGradientStart: '#E7F4FF',
+
+			ctaColorPrimary500: '#FFCC7A',
+			ctaColorPrimary600: '#e6b86e',
+			ctaColorPrimary700: '#cca362',
+
+			ctaBorderColor: '#766140',
+		},
+		space: {
+			px: '1px',
+			'0': 0,
+			'0.5': 2,
+			'1': 4,
+			'1.5': 6,
+			'2': 8,
+			'2.5': 10,
+			'3': 12,
+			'3.5': 14,
+			'4': 16,
+			'4.5': 18,
+			'5': 20,
+			'6': 24,
+			'7': 28,
+			'8': 32,
+			'9': 36,
+			'10': 40,
+			'11': 44,
+			'12': 48,
+			'14': 56,
+			'16': 64,
+			'20': 80,
+			'24': 96,
+			'32': 128,
+			'40': 160,
+			'48': 192,
+			'56': 224,
+			'64': 256,
+			'72': 288,
+			'80': 320,
+			'96': 384,
+			'1/2': '50%',
+			'1/3': '33.333%',
+			'2/3': '66.666%',
+			'1/4': '25%',
+			'2/4': '50%',
+			'3/4': '75%',
+			'1/5': '20%',
+			'2/5': '40%',
+			'3/5': '60%',
+			'4/5': '80%',
+			'1/6': '16.666%',
+			'2/6': '33.333%',
+			'3/6': '50%',
+			'4/6': '66.666%',
+			'5/6': '83.333%',
+			full: '100%',
+		},
+		borderWidths: {
+			'0': 0,
+			'1': 1,
+			'2': 2,
+			'4': 4,
+			'8': 8,
+		},
+		radii: {
+			none: 0,
+			xs: 2,
+			sm: 4,
+			md: 6,
+			lg: 8,
+			xl: 12,
+			'2xl': 16,
+			'3xl': 24,
+			full: 9999,
+		},
+		breakpoints: {
+			base: 0,
+			sm: 480,
+			md: 768,
+			lg: 1120,
+			xl: 1280,
+		},
+		mediaQueries: {
+			base: '@media screen and (min-width: 0)',
+			xs: '@media screen and (min-width: 400px)',
+			sm: '@media screen and (min-width: 480px)',
+			md: '@media screen and (min-width: 768px)',
+			lg: '@media screen and (min-width: 1120px)',
+			xl: '@media screen and (min-width: 1280px)',
+		},
+		letterSpacings: {
+			xs: -0.4,
+			sm: -0.2,
+			md: 0,
+			lg: 0.2,
+			xl: 0.4,
+			'2xl': 1.6,
+		},
+		lineHeights: {
+			'2xs': 16,
+			xs: 18,
+			sm: 20,
+			md: 22,
+			lg: 24,
+			xl: 28,
+			'2xl': 32,
+			'3xl': 40,
+			'4xl': 48,
+			'5xl': 56,
+			'6xl': 72,
+			'7xl': 90,
+		},
+		fontWeights: {
+			hairline: '100',
+			thin: '200',
+			light: '300',
+			normal: '400',
+			medium: '500',
+			semibold: '600',
+			bold: '700',
+			extrabold: '800',
+			black: '900',
+			extraBlack: '950',
+		},
+		fonts: {
+			heading: 'proxima-nova-bold', // Heading component uses this by default
+			body: 'proxima-nova-regular', // Text component uses this by default
+			mono: undefined,
+
+			light: 'proxima-nova-light',
+			regular: 'proxima-nova-regular',
+			semibold: 'proxima-nova-semibold',
+			bold: 'proxima-nova-bold',
+		},
+		fontSizes: {
+			'2xs': 10,
+			xs: 12.5,
+			sm: 14,
+			md: 16,
+			lg: 18,
+			xl: 20,
+			'2xl': 24,
+			'3xl': 30,
+			'4xl': 36,
+			'5xl': 48,
+			'6xl': 60,
+			'7xl': 72,
+			'8xl': 96,
+			'9xl': 128,
+		},
+		opacity: {
+			0: 0,
+			5: 0.05,
+			10: 0.1,
+			20: 0.2,
+			25: 0.25,
+			30: 0.3,
+			40: 0.4,
+			50: 0.5,
+			60: 0.6,
+			70: 0.7,
+			75: 0.75,
+			80: 0.8,
+			90: 0.9,
+			95: 0.95,
+			100: 1,
+		},
+	} as const,
+	globalStyle: {
+		variants: {
+			hardShadow: {
+				'1': {
+					shadowColor: '$backgroundLight900',
+					shadowOffset: {
+						width: -2,
+						height: 2,
+					},
+					shadowRadius: 8,
+					shadowOpacity: 0.5,
+					elevation: 10,
+				},
+				'2': {
+					shadowColor: '$backgroundLight900',
+					shadowOffset: {
+						width: 0,
+						height: 3,
+					},
+					shadowRadius: 8,
+					shadowOpacity: 0.5,
+					elevation: 10,
+				},
+				'3': {
+					shadowColor: '$backgroundLight900',
+					shadowOffset: {
+						width: 2,
+						height: 2,
+					},
+					shadowRadius: 8,
+					shadowOpacity: 0.5,
+					elevation: 10,
+				},
+				'4': {
+					shadowColor: '$backgroundLight900',
+					shadowOffset: {
+						width: 0,
+						height: -3,
+					},
+					shadowRadius: 8,
+					shadowOpacity: 0.5,
+					elevation: 10,
+				},
+				// this 5th version is only for toast shadow
+				// temporary
+				'5': {
+					shadowColor: '$backgroundLight900',
+					shadowOffset: {
+						width: 0,
+						height: 3,
+					},
+					shadowRadius: 8,
+					shadowOpacity: 0.2,
+					elevation: 10,
+				},
+			},
+			softShadow: {
+				'1': {
+					shadowColor: '$backgroundLight900',
+					shadowOffset: {
+						width: 0,
+						height: 0,
+					},
+					shadowRadius: 10,
+					shadowOpacity: 0.1,
+					_android: {
+						shadowColor: '$backgroundLight500',
+						elevation: 5,
+						shadowOpacity: 0.05,
+					},
+				},
+				'2': {
+					shadowColor: '$backgroundLight900',
+					shadowOffset: {
+						width: 0,
+						height: 0,
+					},
+					shadowRadius: 20,
+					elevation: 3,
+					shadowOpacity: 0.1,
+					_android: {
+						shadowColor: '$backgroundLight500',
+						elevation: 10,
+						shadowOpacity: 0.1,
+					},
+				},
+				'3': {
+					shadowColor: '$backgroundLight900',
+					shadowOffset: {
+						width: 0,
+						height: 0,
+					},
+					shadowRadius: 30,
+					shadowOpacity: 0.1,
+					elevation: 4,
+					_android: {
+						shadowColor: '$backgroundLight500',
+						elevation: 15,
+						shadowOpacity: 0.15,
+					},
+				},
+				'4': {
+					shadowColor: '$backgroundLight900',
+					shadowOffset: {
+						width: 0,
+						height: 0,
+					},
+					shadowRadius: 40,
+					shadowOpacity: 0.1,
+					elevation: 10,
+					_android: {
+						shadowColor: '$backgroundLight500',
+						elevation: 20,
+						shadowOpacity: 0.2,
+					},
+				},
+			},
+			smBorder: {
+				light: {
+					borderWidth: 1,
+					borderColor: '$smNeutral200',
+				},
+			},
+		},
+	},
+	plugins: [new AnimationResolver(MotionAnimationDriver)],
+});
+
+type Config = typeof gluestackUIConfig; // Assuming `config` is defined elsewhere
+
+export const componentsConfig = createComponents(componentsTheme);
+
+type Components = typeof componentsConfig;
+
+export type { UIComponents, UIConfig } from '@gluestack-ui/themed';
+
+export interface IConfig {}
+export interface IComponents {}
+
+declare module '@gluestack-style/react' {
+	interface UIConfig extends Omit<Config, keyof IConfig>, IConfig {}
+	interface UIComponents
+		extends Omit<Components, keyof IComponents>,
+			IComponents {}
+}
+
+export const config = {
+	...gluestackUIConfig,
+	components: componentsConfig,
+};

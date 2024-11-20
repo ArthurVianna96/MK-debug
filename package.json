@@ -1,0 +1,29 @@
+{
+	"name": "solito-expo-router",
+	"private": true,
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"devDependencies": {
+		"@types/react": "~18.2.21",
+		"@types/react-dom": "18.2.6",
+		"@types/react-native": "^0.72.2",
+		"eslint": "^8.21.0",
+		"turbo": "^1.4.2",
+		"typescript": "^5.2.2"
+	},
+	"scripts": {
+		"web": "cd apps/next && yarn dev -p 3004",
+		"build": "cd apps/next && npm run build",
+		"native": "cd apps/expo && yarn start",
+		"ios": "cd apps/expo && yarn ios",
+		"android": "cd apps/expo && yarn android",
+		"i18n": "cd packages/app && yarn resources"
+	},
+	"nohoist": [
+		"**/expo-router",
+		"**/expo-router/**"
+	],
+	"packageManager": "yarn@3.4.1"
+}
