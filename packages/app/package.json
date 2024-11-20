@@ -18,8 +18,5 @@
 		"solito": "^4.2.2",
 		"zustand": "^4.5.2"
 	},
-	"scripts": {
-		"resources": "i18next-resources-for-ts interface -i ./locales/en -o ./@types/resources.d.ts"
-	},
 	"sideEffects": false
 }

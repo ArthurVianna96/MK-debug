@@ -1,4 +1,4 @@
-# SuperMoney App 📱
+# Debug MK Connect App 📱
 
 ## 🔦 About
 
@@ -27,45 +27,14 @@ This monorepo is made for an Expo + Next.js app using [Expo Router](https://expo
 
 You can add other folders inside of `packages/` if you know what you're doing and have a good reason to.
 
-## 🏁 Start the app
+## 🏁 Start the app (for this project the web version has nothing)
 
 - Install dependencies: `yarn`
 
-- Next.js local dev:
-  - Run `yarn web`
-    - runs `yarn dev`
 - Expo local dev:
-  - Expo Go:
-    - Run `yarn native`
-    <!-- - Development build:
-    - `cd apps/expo`
-    - Then, either `expo run:ios`, or `expo run:android`
-    - After building the dev client, from the root of the monorepo...
-      - `yarn native` (This runs `expo start --dev-client`) -->
-
-## 🆕 Add new dependencies
-
-### Pure JS dependencies
-
-If you're installing a JavaScript-only dependency that will be used across platforms, install it in `packages/app`:
-
-```sh
-cd packages/app
-yarn add date-fns
-cd ../..
-yarn
-```
-
-### Native dependencies
-
-If you're installing a library with any native code, you must install it in `apps/expo`:
-
-```sh
-cd apps/expo
-yarn add react-native-reanimated
-
-cd ../..
-yarn
-```
-
-You can also install the native library inside of `packages/app` if you want to get autoimport for that package inside of the `app` folder. However, you need to be careful and install the _exact_ same version in both packages. If the versions mismatch at all, you'll potentially get terrible bugs.
+  We are running the actual project on a development build, to do so:
+  - `cd apps/expo`
+    for the first time running on the emulator/simulator you need to install the development build:
+  - `yarn android` or `cd ios && pod install && cd .. && yarn ios`
+    on subsequent runs you can run:
+  - `yarn start` and select which platform you would like to run

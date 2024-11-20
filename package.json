@@ -18,8 +18,7 @@
 		"build": "cd apps/next && npm run build",
 		"native": "cd apps/expo && yarn start",
 		"ios": "cd apps/expo && yarn ios",
-		"android": "cd apps/expo && yarn android",
-		"i18n": "cd packages/app && yarn resources"
+		"android": "cd apps/expo && yarn android"
 	},
 	"nohoist": [
 		"**/expo-router",
