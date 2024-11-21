@@ -18,7 +18,8 @@
 		"build": "cd apps/next && npm run build",
 		"native": "cd apps/expo && yarn start",
 		"ios": "cd apps/expo && yarn ios",
-		"android": "cd apps/expo && yarn android"
+		"android": "cd apps/expo && yarn android",
+		"postinstall": "npx patch-package"
 	},
 	"nohoist": [
 		"**/expo-router",
